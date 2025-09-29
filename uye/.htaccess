@@ -1,0 +1,76 @@
+RewriteEngine On
+RewriteRule ^login/$ login.php [L]
+RewriteRule ^login$ login.php [L]
+RewriteRule ^croppie/$ croppie.php [L]
+RewriteRule ^croppie$ croppie.php [L]
+RewriteRule ^image_update/$ image_update.php [L]
+RewriteRule ^image_update$ image_update.php [L]
+RewriteRule ^home/$ index.php [L]
+RewriteRule ^home$ index.php [L]
+RewriteRule ^kisaicerik/$ kisaicerik.php [L]
+RewriteRule ^kisaicerik$ kisaicerik.php [L]
+RewriteRule ^kisaicerik/$ kisaicerik.php [L]
+RewriteRule ^loginSuc$ loginSuc.php [L]
+RewriteRule ^loginSuc/$ loginSuc.php [L]
+RewriteRule ^logout$ logout.php [L]
+RewriteRule ^logout/$ logout.php [L]
+RewriteRule ^profile$ profile.php [L]
+RewriteRule ^profile/$ profile.php [L]
+RewriteRule ^tumicerik$ tumIcerik.php [L]
+RewriteRule ^tumicerik/$ tumIcerik.php [L]
+RewriteRule ^register$ register.php [L]
+RewriteRule ^register/$ register.php [L]
+RewriteRule ^slogan$ slogan.php [L]
+RewriteRule ^slogan/$ slogan.php [L]
+
+RewriteRule ^isHayati$ isHayati.php [L]
+RewriteRule ^isHayati/$ isHayati.php [L]
+RewriteRule ^isHayatiDuzenle/([^/]+)?$ isHayatiDuzenle.php?id=$1
+RewriteRule ^isHayatiDuzenle/([^/]+)/?$ isHayatiDuzenle.php?id=$1
+RewriteRule ^isHayatiSil/([^/]+)?$ isHayatiSil.php?id=$1
+RewriteRule ^isHayatiSil/([^/]+)/?$ isHayatiSil.php?id=$1
+RewriteRule ^isHayatiAktif$ isHayatiAktif.php [L]
+RewriteRule ^isHayatiAktif/$ isHayatiAktif.php [L]
+RewriteRule ^isHayatiPasif$ isHayatiPasif.php [L]
+RewriteRule ^isHayatiPasif/$ isHayatiPasif.php [L]
+RewriteRule ^isHayatiEkle$ isHayatiEkle.php [L]
+RewriteRule ^isHayatiEkle/$ isHayatiEkle.php [L]
+
+RewriteRule ^egitimHayati$ egitimHayati.php [L]
+RewriteRule ^egitimHayati/$ egitimHayati.php [L]
+RewriteRule ^egitimHayatiDuzenle/([^/]+)?$ egitimHayatiDuzenle.php?id=$1
+RewriteRule ^egitimHayatiDuzenle/([^/]+)/?$ egitimHayatiDuzenle.php?id=$1
+RewriteRule ^egitimHayatiSil/([^/]+)?$ egitimHayatiSil.php?id=$1
+RewriteRule ^egitimHayatiSil/([^/]+)/?$ egitimHayatiSil.php?id=$1
+RewriteRule ^egitimHayatiAktif$ egitimHayatiAktif.php [L]
+RewriteRule ^egitimHayatiAktif/$ egitimHayatiAktif.php [L]
+RewriteRule ^egitimHayatiPasif$ egitimHayatiPasif.php [L]
+RewriteRule ^egitimHayatiPasif/$ egitimHayatiPasif.php [L]
+RewriteRule ^egitimHayatiEkle$ egitimHayatiEkle.php [L]
+RewriteRule ^egitimHayatiEkle/$ egitimHayatiEkle.php [L]
+
+RewriteRule ^iletisimBilgileri$ iletisimBilgileri.php [L]
+RewriteRule ^iletisimBilgileri/$ iletisimBilgileri.php [L]
+RewriteRule ^iletisimBilgileriDuzenle/([^/]+)?$ iletisimBilgileriDuzenle.php?id=$1
+RewriteRule ^iletisimBilgileriDuzenle/([^/]+)/?$ iletisimBilgileriDuzenle.php?id=$1
+RewriteRule ^iletisimBilgileriSil/([^/]+)?$ iletisimBilgileriSil.php?id=$1
+RewriteRule ^iletisimBilgileriSil/([^/]+)/?$ iletisimBilgileriSil.php?id=$1
+RewriteRule ^iletisimBilgileriAktif$ iletisimBilgileriAktif.php [L]
+RewriteRule ^iletisimBilgileriAktif/$ iletisimBilgileriAktif.php [L]
+RewriteRule ^iletisimBilgileriPasif$ iletisimBilgileriPasif.php [L]
+RewriteRule ^iletisimBilgileriPasif/$ iletisimBilgileriPasif.php [L]
+RewriteRule ^iletisimBilgileriEkle$ iletisimBilgileriEkle.php [L]
+RewriteRule ^iletisimBilgileriEkle/$ iletisimBilgileriEkle.php [L]
+
+RewriteRule ^yayinla$ yayinaAl.php [L]
+RewriteRule ^yayinla/$ yayinaAl.php [L]
+RewriteRule ^yayinkaldir$ yayinKaldir.php [L]
+RewriteRule ^yayinkaldir/$ yayinKaldir [L]
+
+RewriteRule ^socials$ socials.php
+RewriteRule ^socials/$ socials.php
+
+RewriteRule ^social$ social.php
+RewriteRule ^social/$ social.php
+
+RewriteRule ^social/([^/]+)?$ social.php?title=$1

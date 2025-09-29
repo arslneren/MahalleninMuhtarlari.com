@@ -1,0 +1,3455 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+a{
+    text-decoration: none;
+    outline: 0;
+}
+
+
+@font-face {
+    font-family: 'gotham_trbold';
+    src: url('../fonts/gotham-bold-tr-webfont.woff2') format('woff2'),
+    url('../fonts/gotham-bold-tr-webfont.woff') format('woff'),
+    url('../fonts/gotham-bold-tr-webfont.svg#gotham_trbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gotham_trthin';
+    src: url('../fonts/gotham-thin-tr-webfont.woff2') format('woff2'),
+    url('../fonts/gotham-thin-tr-webfont.woff') format('woff'),
+    url('../fonts/gotham-thin-tr-webfont.svg#gotham_trthin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gotham_trmedium';
+    src: url('../fonts/gotham-medium-tr-webfont.woff2') format('woff2'),
+    url('../fonts/gotham-medium-tr-webfont.woff') format('woff'),
+    url('../fonts/gotham-medium-tr-webfont.svg#gotham_trmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gotham_trbook';
+    src: url('../fonts/gotham-book-tr-webfont.woff2') format('woff2'),
+    url('../fonts/gotham-book-tr-webfont.woff') format('woff'),
+    url('../fonts/gotham-book-tr-webfont.svg#gotham_trbook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gotham_trlight';
+    src: url('../fonts/gotham-light-tr-webfont.woff2') format('woff2'),
+    url('../fonts/gotham-light-tr-webfont.woff') format('woff'),
+    url('../fonts/gotham-light-tr-webfont.svg#gotham_trlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    width: 100%;
+    background: #ffffff;
+}
+.content{
+    width: 1675px;
+    margin: 0px auto;
+    position: relative;
+}
+
+.clear{
+    display: block;
+    clear: both;
+}
+
+.container{
+    width: 100%;
+}
+
+.menu{
+    position: absolute;
+    width: 100%;
+    top: 58px;
+    left: 0;
+    z-index: 9;
+    transition: 0.3s ease all;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.menu.menuFix{
+    transition: 0.3s ease all;
+    position: fixed;
+    background: #ffffff;
+}
+
+.menu.menuFix ul, .menu.menuFix .menuBtn{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    transition: 0.3s ease all;
+}
+
+.menu ul{
+    /*float: right;
+    margin-top: 58px;
+    margin-right: 176px;*/
+    /*display: inline-block;*/
+    margin: 0 auto;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+}
+
+.menu ul li{
+    float: left;
+    display: inline-block;
+    /*margin-right: 23px; */
+    margin-right: 5px;
+}
+
+.menu ul li.logo{
+    margin-right: 20px;
+}
+
+.menu ul li a{
+    font-family: 'gotham_trbold';
+    /*padding: 24px 27px;*/
+    padding: 20px 24px;
+    font-size: 22px;
+    color:#b8112b;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s ease all;
+}
+
+.menu .active a{
+    /*background: #b8112b;*/
+    background: #2b52b8;
+    color: #fff;
+}
+
+.menu ul li a:hover{
+    background: #b8112b;
+    color: #fff;
+}
+
+.menu ul li.logo a:hover{
+    background: transparent;
+    color: #b8112b;
+}
+
+.menu .logo img{
+    width: 240px;
+    display: inline-block;
+}
+
+.menu .logo a{
+    padding: 0;
+}
+
+.menuBtn{
+    font-family: 'gotham_trmedium';
+    font-size: 22px;
+    color:#b8112b;
+    /*margin-top: 67px;*/
+    margin-top: 0 !important;
+    text-decoration: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menuBtn a{
+    color:#2b52b8;
+    text-decoration: none;
+    padding: 12px 24px;
+    border: 1px solid #2b52b8;
+    display: inline-block;
+}
+
+.homeSlide{
+    height: 1080px;
+    max-height: 1080px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bigText{
+    float: right;
+    margin-top: 278px;
+}
+
+.bigText h1{
+    font-family: 'gotham_trthin';
+    font-size: 110px;
+    color:#b8112b;
+    line-height: 120px;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: 0.5s ease all;
+    transition-delay: 0.3s;
+}
+
+.activeSection{
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+.activeSectionOp{
+    opacity: 1 !important;
+}
+
+
+.bigText h1 span{
+    font-family: 'gotham_trbold';
+    font-size: 66px;
+    line-height: 76px;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: 0.5s ease all;
+    transition-delay: 0.6s;
+    display: inline-block;
+    color: #2b52b8;
+}
+
+.icon-scroll,
+.icon-scroll:before {
+    position: absolute;
+    left: 50%;
+}
+.icon-scroll {
+    display: block;
+    float: left;
+    position: relative;
+    width: 40px;
+    height: 70px;
+    left: auto;
+    box-shadow: inset 0 0 0 1px #2b52b8;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.icon-scroll:before {
+    content: '';
+    opacity: 0;
+    width: 6px;
+    height: 6px;
+    background: #b8112b;
+    margin-left: -3px;
+    top: 8px;
+    border-radius: 4px;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: scroll;
+    animation-name: scroll;
+}
+@-webkit-keyframes scroll {
+    0% {
+        opacity: 0;
+    }
+    25%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(46px);
+    }
+}
+@keyframes scroll {
+    0% {
+        opacity: 0;
+    }
+    25%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(46px);
+    }
+}
+
+.mouseIcon{
+    margin-top: 200px;
+    display: inline-block;
+    opacity: 0;
+    transition: 0.5s ease opacity;
+}
+
+
+.mouseIcon span{
+    padding-top: 10px;
+    font-family: 'gotham_trthin';
+    font-size: 26px;
+    line-height: 30px;
+    color: #2b52b8;
+    display: block;
+    float: left;
+    margin-left: 32px;
+}
+.slideAnim{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.imgLayers{
+    position: absolute;
+    z-index: -2;
+    height: 100%;
+}
+
+.layer2, .layer3{
+    width: 605px;
+    height: 613px;
+    position: absolute;
+    bottom: -130px;
+    left: -115px;
+}
+
+.layer1{
+    z-index: 2;
+    position: relative;
+    opacity: 0;
+    transition: 1s ease opacity;
+}
+
+.layer2{
+    z-index: 3;
+}
+
+.layer3{
+    z-index: 1;
+}
+
+.layerAnim{
+    transition: 2s ease all;
+    transform-origin: center 900px;
+}
+
+.activeLayer{
+    transform: rotate(15deg);
+}
+
+.socials{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.75s ease;
+}
+.socials a{
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.socials img{
+    width: 36px;
+    display: inline-block;
+}
+
+.mahSelector{
+    width: 100%;
+    height: 880px;
+    background: url("../img/mahSelectorBg.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.mahSelector form{
+    width: 618px;
+    height: 893px;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 75px 45px 30px 45px;
+    box-sizing: border-box;
+    position: relative;
+    float: right;
+    margin-top: -38px;
+    margin-right: 24px;
+}
+
+.mahSelector select, .mahSelector option{
+    text-transform: capitalize;
+}
+
+.mahSelector form span{
+    font-family: 'gotham_trmedium';
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 34px;
+    padding-bottom: 22px;
+    display: inline-block;
+}
+
+.mahSelector form select{
+    font-family: 'gotham_trbook';
+    font-size: 30px;
+    width: 100%;
+    padding: 22px 30px;
+    background: transparent;
+    border: 1px solid #ececec;
+    color: #ececec;
+    appearance: none;
+    margin-bottom: 42px;
+    display: inline-block;
+    cursor: pointer;
+}
+.mahSelector form select:focus{
+    outline: 0;
+    border-color: #ececec;
+}
+
+.mahSelector form option{
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+}
+
+
+.mahSelector input{
+    width: 100%;
+    font-family: 'gotham_trbold';
+    font-size: 30px;
+    line-height: 30px;
+    padding: 20px 0;
+    color: #fefefe;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 170px;
+    border: none;
+    outline: 0;
+    background: rgba(255,255,255,0.2);
+}
+
+.redColor{
+    color: #b8112b !important;
+    border-color: #b8112b !important;
+}
+
+.mahSelector input:hover, .mahSelector input:focus{
+    outline: 0;
+    border: none;
+}
+
+.sliderArea{
+    padding: 100px 0;
+    background: #fafafa ;
+}
+
+.sliderArea h3{
+    font-family: 'gotham_trbold';
+    font-size: 58px;
+    color: #2b52b8;
+    line-height: 62px;
+    padding-bottom: 50px;
+}
+
+.persons{
+    text-align: center;
+    width: 406px;
+    background: #ffffff;
+    margin: 0 auto;
+}
+
+.personImg{
+    width: 406px;
+    height: 344px;
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+
+.personImg img:hover{
+    transform: scale(1.1);
+}
+
+.personImg img{
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+    transition: 0.3s ease all;
+    width: 100%;
+}
+
+.personName{
+    font-size: 36px;
+    line-height: 40px;
+    color: #4e4e4e;
+    font-family: 'gotham_trbold';
+    padding: 30px 0;
+    display: inline-block;
+    position: relative;
+}
+
+.personName:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 2px;
+    background: #d2d2d2;
+}
+
+.pDetails{
+    color: #c0c0c0;
+    font-size: 20px;
+    font-family: 'gotham_trbook';
+    line-height: 24px;
+    padding: 30px 10px;
+    text-transform: capitalize;
+}
+
+.detailsBtn{
+    color: #b8112b;
+    font-family: 'gotham_trbold';
+    font-size: 22px;
+    line-height: 76px;
+    height: 76px;
+    border-top: 3px solid #eeeeee;
+    text-decoration: none;
+    outline: 0;
+    display: inline-block;
+    width: 100%;
+    transition: 0.3s ease all;
+}
+
+.detailsBtn:hover{
+    background: #2b52b8;
+    color: #ffffff;
+    border-color: transparent;
+}
+
+.slick-arrow{
+    position: absolute;
+    right: 0;
+    top:-100px;
+    width: 87px;
+    height: 87px;
+    cursor: pointer;
+    border-radius: 100%;
+    -webkit-box-shadow: -5px 7px 12px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: -5px 7px 12px -10px rgba(0,0,0,0.75);
+    box-shadow: -5px 7px 12px -10px rgba(0,0,0,0.75);
+}
+
+.slick-prev{
+    right: 100px;
+    background: url("../img/slideLeftArrow.png") no-repeat center center;
+}
+
+.slick-next{
+    background: url("../img/slideRightArrow.png") no-repeat center center;
+}
+
+.slideAll{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.slideAll a{
+    background: #2b52b8;
+    color: #ffffff;
+    font-family: 'gotham_trbold';
+    font-size: 26px;
+    line-height: 70px;
+    padding: 0 30px;
+    display: inline-block;
+    outline: 0;
+    text-decoration: none;
+    transition: 0.3s ease all;
+}
+
+.slideAll a:hover{
+    -webkit-box-shadow: 0px 7px 25px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 7px 25px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 7px 25px -1px rgba(0,0,0,0.75);
+}
+
+.aboutSection{
+    padding: 154px 0;
+    background: #b8112b;
+    /*overflow: hidden;*/
+}
+
+.aboutSection .content{
+    width: 1500px;
+}
+
+.circle{
+    float: left;
+}
+
+.circle, .innerCircle{
+    width: 568px;
+    height: 568px;
+    border-radius: 100%;
+    position: relative;
+    animation: revRotation 30s linear infinite;
+}
+
+
+.circleItem{
+    width: 191px;
+    height: 191px;
+    position: absolute;
+    z-index: 1;
+    transform-origin: 284px 284px;
+}
+
+.circleItem img{
+    width: 163px;
+}
+
+.circleAnne{
+    transform:rotate(72deg);
+}
+
+@keyframes rotationAnne {
+    from{
+        transform: rotate(-72deg);
+    }
+    to{
+        transform: rotate(-432deg);
+    }
+}
+
+.circleAnne img{
+    transform:rotate(-72deg);
+    animation: rotationAnne reverse 30s linear infinite;
+}
+
+.circleCocuk{
+    transform: rotate(144deg);
+}
+
+.circleCocuk img{
+    transform:rotate(-144deg);
+    animation: rotationCocuk reverse 30s linear infinite;
+}
+
+@keyframes rotationCocuk {
+    from{
+        transform: rotate(-144deg);
+    }
+    to{
+        transform: rotate(-504deg);
+    }
+}
+
+.circleDede{
+    transform: rotate(216deg);
+}
+
+.circleDede img{
+    transform:rotate(-216deg);
+    animation: rotationDede reverse 30s linear infinite;
+}
+
+@keyframes rotationDede {
+    from{
+        transform: rotate(-216deg);
+    }
+    to{
+        transform: rotate(-576deg);
+    }
+}
+.circleAdam{
+    transform: rotate(288deg);
+}
+
+.circleAdam img {
+    transform: rotate(-288deg);
+    animation: rotationAdam reverse 30s linear infinite;
+}
+
+@keyframes rotationAdam {
+    from{
+        transform: rotate(-288deg);
+    }
+    to{
+        transform: rotate(-648deg);
+    }
+}
+
+.circleKadin img {
+    transform: rotate(0deg);
+    animation: rotationKadin reverse 30s linear infinite;
+}
+
+@keyframes rotationKadin {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-360deg);
+    }
+}
+
+.innerCircle{
+    background: url("../img/circle.png") no-repeat center center;
+    background-size: contain;
+    animation: rotation 15s linear infinite;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@keyframes rotation {
+    from{
+        transform: translateY(-50%) rotate(0);
+    }
+    to{
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+@keyframes revRotation {
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(-360deg);
+    }
+}
+
+
+.aboutContent{
+    width: 50%;
+    color: #ffffff;
+    float: right;
+}
+
+.aboutContent h3{
+    font-family: 'gotham_trbold';
+    font-size: 63px;
+    line-height: 85px;
+    padding-bottom: 44px;
+}
+
+.aboutContent p{
+    font-family: 'gotham_trthin';
+    font-size: 28px;
+    line-height: 53px;
+    padding-bottom: 60px;
+}
+
+.abSLeft .aboutContent p{
+    color: #a8a8a8;
+    font-family: 'gotham_trbook';
+}
+
+.aboutContent a{
+    text-decoration: none;
+    outline: 0;
+    font-family: 'gotham_trbold';
+    font-size: 28px;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 25px 30px;
+    display: inline-block;
+}
+
+
+
+.contact{
+    padding: 150px 0 120px;
+}
+
+.formArea{
+    float: right;
+    width: 40%;
+}
+
+.formArea form{
+    width: 618px;
+    padding: 45px 42px 20px 42px;
+    box-sizing: border-box;
+    border: 1px solid #d0d0d0 ;
+    display: block;
+    margin: 0 auto;
+}
+
+.formArea input, .formArea textarea{
+    display: block;
+    color: #c8c8c8;
+    font-size: 24px;
+    font-family: 'gotham_trmedium';
+    width: 100%;
+    border: 1px solid #d0d0d0 ;
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 100%;
+    margin-bottom: 28px;
+    outline: 0;
+    text-decoration: 0;
+}
+
+.formArea input::placeholder, .formArea textarea::placeholder{
+    color: #c8c8c8;
+    font-size: 24px;
+}
+
+.formArea input{
+    line-height: 80px;
+    padding: 0 20px;
+}
+
+.inputAlert{
+    color: red !important;
+}
+.inputAlert::placeholder{
+    color: red !important;
+}
+.errorShow{
+    margin: 10px 0;
+    color: red;
+    display: none;
+}
+.errorShowImp{
+    margin: 10px 0;
+    color: red;
+    display: none;
+}
+.sucShow{
+    margin: 10px 0;
+    color: green;
+    display: none;
+}
+
+.errorShow.show, .sucShow.show{
+    display: block;
+}
+.errorShow.show, .errorShowImp.show, .sucShow.show{
+    display: block;
+}
+
+.formArea textarea{
+    resize: none;
+    padding: 20px 20px;
+    height: 250px;
+    min-height: 250px;
+    max-height: 250px;
+}
+
+
+.formArea input.formBtn{
+    color: #ffffff;
+    background: #2b52b8;
+    line-height: 97px;
+    cursor: pointer;
+}
+
+.formContent{
+    float: left;
+    width: 50%;
+    padding: 0 10% 0 0;
+    box-sizing: border-box;
+}
+
+.formContent h4{
+    color: #2b52b8;
+    font-family: 'gotham_trbold';
+    line-height: 88px;
+    font-size: 66px;
+    padding-bottom: 50px;
+}
+
+.formContent p{
+    font-size: 30px;
+    color: #a8a8a8;
+    font-family: 'gotham_trbook';
+    line-height: 52px;
+    padding-bottom: 50px;
+}
+
+.fcDetails{
+    margin-bottom: 20px;
+}
+
+.fcDetails span{
+    font-size: 30px;
+    color: #a8a8a8;
+    font-family: 'gotham_trbook';
+    line-height: 52px;
+    width: 80%;
+    border-left: 1px solid #b8112b;
+    padding-left: 20px;
+    position: relative;
+    display: block;
+    margin-left: 70px;
+}
+
+.fcDetails span:before{
+    content: '';
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: -70px;
+    width: 40px;
+    height: 51px;
+    transform: translateY(-50%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.fcDetails .fcIcon{
+    width: 40px;
+    height: 51px;
+    background-size: contain;
+    display: inline-block;
+    float: left;
+    margin-right: 30px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.fcDetails .fcMail:before{
+    background: url('../img/mailIcon.png') no-repeat center center;
+    background-size: contain;
+
+}
+.fcDetails .fcPhone:before{
+    background: url('../img/phoneIcon.png') no-repeat center center;
+    background-size: contain;
+
+}
+.fcDetails .fcLoc:before{
+    background: url('../img/locIcon.png') no-repeat center center;
+    background-size: contain;
+
+}
+
+.footer{
+    background: #fafafa;
+    padding: 94px 0 50px;
+    text-align: center;
+}
+
+.footerMenu a{
+    display: inline-block;
+    font-family: 'gotham_trbold';
+    color: #2b52b8;
+    font-size: 23px;
+    margin: 0 40px;
+}
+
+.fsocials{
+    margin-top: 40px;
+}
+
+.fsocials img{
+    width: 30px;
+}
+.fsocials a{
+    display: inline-block;
+    margin: 0 8px;
+}
+
+/* HAKKIMIZDA */
+
+.sloganSlide{
+    text-align: center;
+    background: #fafafa;
+}
+
+.sloganSlide .bigText{
+    float: none;
+    width: 100%;
+    text-align: center;
+}
+
+.abSLeft .circle{
+    float: right;
+}
+
+.abSLeft .aboutContent{
+    float: left;
+    color:#b8112b;
+}
+
+.abSLeft.aboutSection{
+    background: #f9f9f9;
+    color:#b8112b;
+    padding-bottom: 0;
+}
+
+.phoneArea{
+    width: 45%;
+    float: right;
+}
+
+.phoneArea img{
+    width: 100%;
+    position: relative;
+    transform:translateY(-30%);
+}
+
+.notice{
+    background: #2b52b8;
+    color: #ffffff;
+    padding: 130px 0 100px 0;
+}
+
+.notice h3{
+    font-family: 'gotham_trbold';
+    font-size: 66px;
+    line-height: 88px;
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+.planAdv{
+    text-align: center;
+}
+
+.plans{
+    text-align: left;
+    border: 1px solid #ffffff;
+    padding: 60px;
+    width: 320px;
+    display: inline-block;
+    margin: 0 12px;
+}
+
+.plans h4{
+    font-family: 'gotham_trbold';
+    font-size: 45px;
+    line-height: 65px;
+}
+.price{
+    font-family: 'gotham_trbold';
+    font-size: 80px;
+    line-height: 110px;
+}
+
+.price .tlLogo{
+    font-size: 49px;
+    font-family: sans-serif;
+}
+
+.price .timeDetail{
+    font-family: 'gotham_trbold';
+    font-size: 25px;
+}
+
+.plans p{
+    font-family: 'gotham_trbook';
+    font-size: 30px;
+    line-height: 40px;
+}
+.botBorder{
+    border-bottom: 1px solid #ffffff;
+    display: inline-block;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.priceDetail{
+    padding-top: 50px;
+    width: auto;
+    text-align: center;
+    font-family: 'gotham_trbook';
+    font-size: 35px;
+    position: relative;
+}
+
+
+.priceDetail p{
+    display: inline-block;
+    position: relative;
+}
+
+.priceDetail p::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 140px;
+    background: #ffffff;
+    height: 2px;
+    left: -150px;
+}
+.priceDetail p::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 140px;
+    background: #ffffff;
+    height: 2px;
+    right: -150px;
+}
+
+/* Muhtarlar */
+
+.allMuhtar{
+    background: #fafafa;
+    text-align: center;
+    padding-top: 130px;
+    padding-bottom: 60px;
+    position: relative;
+}
+
+.allMuhtar h3{
+    font-family: 'gotham_trbold';
+    font-size: 75px;
+    line-height: 85px;
+    color: #b8112b;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    padding-bottom: 100px;
+}
+
+.allMuhtar .persons{
+    display: inline-block;
+    margin: 20px 3px;
+}
+
+.allMuhtar .personImg{
+    height: auto;
+}
+
+.loading{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+    display: none;
+}
+
+.loading svg{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Mob Menu */
+
+.mobMenuArea{
+    position: fixed;
+    width: 80%;
+    height: 100%;
+    top:0;
+    right: 0;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: 0.5s ease all;
+    display: none;
+}
+
+.menuActive.mobMenuArea{
+    transform: translateY(0);
+}
+
+.overlay{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+}
+
+.overActive{
+    display: inline-block;
+}
+
+.overlayArea{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    position: absolute;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.mobContent{
+    position: absolute;
+    top:0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: #2b52b8;
+    color: #ececec;
+    box-sizing: border-box;
+    padding:100px 50px 50px;
+}
+
+.mobContent ul{
+    list-style: none;
+}
+
+.mobContent li{
+    display: block;
+    width: 100%;
+    color: #ececec;
+    padding: 25px 0;
+    border-bottom: 1px solid #ffffff;
+}
+
+.mobContent li:nth-last-of-type(1){
+    border: none;
+}
+
+.mobContent a{
+    color: #ececec;
+    font-family: 'gotham_trmedium';
+    font-size: 30px;
+}
+
+.mobMenuArea .bar1, .mobMenuArea .bar2, .mobMenuArea .bar3{
+    background-color: #ececec;
+}
+
+.mobMenuArea .mMenuBtn{
+    top: 70px;
+    right: 50px;
+}
+
+.muhtarDetail{
+    background-color: #fafafa;
+    padding: 100px 0;
+}
+
+.imgArea{
+    width: 735px;
+    height: auto;
+    background-color: #b8112b;
+    float: left;
+}
+
+.imgArea img{
+    width: 100%;
+    transform: translateX(30px) translateY(-30px);
+}
+
+.shortBlog{
+    /*padding-bottom: 100px;*/
+}
+
+.shortContent{
+    float: right;
+    width: 820px;
+}
+
+.shortContent h2{
+    color: #2b52b8;
+    font-family: 'gotham_trbold';
+    font-size: 60px;
+    padding-bottom: 80px;
+}
+.shortContent p{
+    color: #575757;
+    font-family: 'gotham_trbook';
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.bigBlog{
+    text-align: left;
+}
+
+.bigBlog b, .bigBlog strong{
+    font-family: 'gotham_trmedium';
+}
+
+.bigBlog ul, .bigBlog ol{
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.bigBlog ul li::before{
+    content: "\2022";
+    color: #2b52b8;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.bigBlog li{
+    padding-bottom: 10px;
+}
+
+.bigBlog table{
+    width: 100%;
+}
+
+.bigBlog td{
+    padding: 5px;
+}
+.bigBlog tr{
+    padding-bottom: 5px;
+}
+
+
+.bigBlog iframe{
+    width: 100% !important;
+    box-sizing: border-box;
+    border: 10px solid #2b52b8;
+
+}
+
+
+.bigBlog h3{
+    font-family: 'gotham_trbold';
+    font-size: 60px;
+    color: #2b52b8;
+    padding-bottom: 50px;
+}
+
+.bigBlog{
+    font-size: 20px;
+    font-family: 'gotham_trbook';
+    line-height: 40px;
+    color: #575757;
+}
+
+
+.kvkk ol, .kvkk ul{
+    list-style: disc;
+}
+
+.kvkk td{
+    border: 1px solid;
+    padding: 2px;
+}
+.kvkk table{
+    margin: 10px 0;
+}
+
+#cookiePopup {
+    background-color: #ffffff;
+    position: fixed;
+    font-size: 14px;
+    width: 70vw;
+    max-width: 42.85em;
+    box-shadow: 0 0 2em rgba(5, 0, 31, 0.15);
+    font-family: "Poppins", sans-serif;
+    text-align: justify;
+    line-height: 1.8em;
+    padding: 2em 1.4em;
+    border-radius: 6px;
+    transition: all 0.5s ease-in;
+    left: 50px;
+    bottom: 20px;
+}
+#cookiePopup span{
+    font-weight: bold;
+    padding-left: 10px;
+}
+#cookiePopup img {
+    display: block;
+    width: 3.75em;
+    transform: translateZ(0);
+    position: relative;
+    margin: auto;
+}
+#cookiePopup p {
+    text-align: center;
+    margin: 1.4em 0;
+}
+#cookiePopup button {
+    background-color: #b8112b;
+    border: none;
+    color: #ffffff;
+    font-size: 1.2em;
+    padding: 1em 1.4em;
+    display: block;
+    position: relative;
+    margin: auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#cookiePopup a {
+    color: #b8112b;
+}
+.hide {
+    visibility: hidden;
+    bottom: 0;
+    right: 2em;
+}
+.show {
+    visibility: visible;
+    bottom: 2em;
+    right: 2em;
+}
+
+/* Muhtar Detay Kişisel Bilgiler */
+
+.personDetailsSection{
+    width: 100%;
+    background: #f6f6f6;
+    padding-top: 40px;
+}
+
+.personDetailsSection h3{
+    color: #b8112b;
+    font-family: 'gotham_trbold';
+    font-size: 45px;
+    line-height: 70px;
+    width: 100%;
+    border-bottom: 2px solid #e7e7e7;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.personEducation img{
+    width: 75px;
+    float: left;
+    margin-right: 20px;
+}
+
+.personDetailsSection ul {
+    list-style: none; /* Remove default bullets */
+    margin-left: 20px;
+    color: #2b52b8;
+    font-family: 'gotham_trbold';
+    line-height: 51px;
+    font-size: 24px;
+}
+
+.personDetailsSection span{
+    font-family: 'gotham_trlight';
+    color: #575757;
+}
+
+.personDetailsSection ul li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #2b52b8; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.personEducation{
+    padding-bottom: 40px;
+}
+
+.personSocials{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 40px;
+    background: #fafafa;
+}
+
+.personSocials a{
+    display: inline-block;
+    outline: 0;
+    text-decoration: none;
+    margin: 0 40px;
+    width: 60px;
+}
+
+.personSocials img{
+    width: 100%;
+    display: inline-block;
+}
+
+
+
+@media only screen and (max-width: 37.5em) {
+    #cookiePopup {
+        /*width: 100%;*/
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+    .hide {
+        bottom: 2em;
+        right: 0;
+    }
+    .show {
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.lastFooter{
+    background: #fafafa;
+    border-top: 1px solid #d7d7d7;
+    padding: 20px 0;
+    font-family: 'gotham_trlight';
+    font-size: 18px;
+}
+
+.lastFooter .content{
+    width: 60%;
+    max-width: 1675px;
+}
+.copyright{
+    float: left;
+}
+.sorumluluk{
+    float: right;
+}
+
+.lastFooter a{
+    color: #b8112b;
+}
+
+.float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index:100;
+}
+
+.my-float{
+    margin-top:16px;
+}
+
+@media screen and (max-width: 1815px) {
+    .menu{
+        top: 50px;
+    }
+    .menu .logo img{
+        width: 180px;
+    }
+    .menu ul li a{
+        font-size: 18px;
+        padding: 18px 22px;
+    }
+}
+
+
+
+@media screen and (max-width: 1700px) {
+    .content{
+        width: 90%;
+    }
+    .bigText h1{
+        font-size: 90px;
+        line-height: 100px;
+    }
+    .bigText h1 span{
+        font-size: 56px;
+        line-height: 66px;
+    }
+
+    .persons{
+        width: 350px;
+    }
+    .personImg{
+        width: 350px;
+        height: 315px;
+    }
+    .formArea form{
+        width: 100%;
+    }
+
+    .aboutSection .content {
+        width: 80%;
+    }
+    .aboutContent{
+        width: 45%;
+    }
+    .aboutContent h3 {
+        font-size: 52px;
+        line-height: 70px;
+        padding-bottom: 29px;
+    }
+    .aboutContent p{
+        font-size: 24px;
+        line-height: 40px;
+        padding-bottom: 55px;
+    }
+    .aboutContent a{
+        font-size: 26px;
+        padding: 23px 28px;
+    }
+    .circle, .innerCircle{
+        width: 500px;
+        height: 500px;
+    }
+
+    .circleItem{
+        transform-origin: 250px 250px;
+        width: 135px;
+        height: 135px;
+    }
+    .circleItem img{
+        width: 135px;
+    }
+    .imgArea{
+        width: 640px;
+    }
+    .shortContent{
+        width: 720px;
+    }
+}
+
+@media screen and (max-width: 1610px) {
+    .persons{
+        width: 320px;
+    }
+    .personImg{
+        width: 320px;
+        height: 255px;
+    }
+    .personName{
+        font-size: 32px;
+        line-height: 32px;
+        padding: 28px 0;
+    }
+    .pDetails{
+        font-size: 16px;
+        line-height: 22px;
+        padding: 26px 10px;
+    }
+    .detailsBtn{
+        font-size: 20px;
+        line-height: 64px;
+        height: 64px;
+    }
+    .sliderArea h3 {
+        font-size: 54px;
+        line-height: 58px;
+        padding-bottom: 48px;
+    }
+}
+
+@media screen and (max-width: 1570px) {
+    .plans{
+        width: 290px;
+    }
+    .imgArea{
+        width: 600px;
+    }
+    .shortContent{
+        width: 680px;
+    }
+    .shortContent h2{
+        padding-bottom: 25px;
+    }
+}
+
+@media screen and (max-width: 1535px) {
+    .bigText{
+        margin-top: 220px;
+    }
+    .homeSlide{
+        height: 900px;
+        max-height: 900px;
+    }
+    .layer2, .layer3{
+        width: 425px;
+        height: auto;
+        bottom: -70px;
+        left: -180px;
+    }
+    .layer1{
+        width: 400px;
+    }
+    .menu{
+        top: 50px;
+    }
+    .menu .logo img{
+        width: 180px;
+    }
+    .menu ul li{
+        /*margin-right: 18px;*/
+    }
+    .menu ul li a{
+        font-size: 18px;
+        /*padding: 20px 24px;*/
+    }
+    .menuBtn{
+        font-size: 18px;
+    }
+    .mouseIcon{
+        margin-top: 150px;
+    }
+    .mahSelector form{
+        width: 540px;
+        height: 800px;
+    }
+    .mahSelector form span{
+        font-size: 25px;
+        line-height: 28px;
+    }
+    .mahSelector form select{
+        font-size: 23px;
+        width: 100%;
+        padding: 20px 22px;
+        margin-bottom: 25px;
+    }
+    .mahSelector input{
+        margin-top: 150px;
+        font-size: 26px;
+        line-height: 26px;
+    }
+    .mahSelector{
+        height: 800px;
+    }
+
+    .formContent h4 {
+        line-height: 80px;
+        font-size: 60px;
+        padding-bottom: 70px;
+    }
+
+    .formContent p {
+        font-size: 26px;
+        line-height: 46px;
+        padding-bottom: 64px;
+    }
+
+    .fcDetails span{
+        font-size: 26px;
+        line-height: 50px;
+    }
+    .lastFooter .content{
+        width: 80%;
+    }
+    .personEducation img{
+        width: 65px;
+    }
+    .personDetailsSection h3{
+        line-height: 60px;
+        font-size: 34px;
+    }
+    .personDetailsSection ul{
+        font-size: 18px;
+        line-height: 44px;
+    }
+}
+
+@media screen and (max-width: 1480px){
+    .persons{
+        width: 290px;
+    }
+    .personImg{
+        width: 290px;
+        height: 245px;
+    }
+    .personName{
+        font-size: 24px;
+        line-height: 24px;
+        padding: 24px 0;
+    }
+    .pDetails{
+        font-size: 15px;
+        line-height: 18px;
+        padding: 23px 10px;
+    }
+    .detailsBtn{
+        font-size: 18px;
+        line-height: 55px;
+        height: 56px
+    }
+    .sliderArea h3 {
+        font-size: 46px;
+        line-height: 46px;
+        padding-bottom: 40px;
+    }
+    .slick-arrow{
+        width: 57px;
+        height: 57px;
+        background-size: cover;
+    }
+    .slick-prev{
+        right: 70px;
+    }
+    .slideAll a {
+        font-size: 22px;
+        line-height: 60px;
+        padding: 0px 26px;
+    }
+    .plans{
+        width: 240px;
+        padding: 50px;
+    }
+    .plans h4 {
+        font-size: 40px;
+        line-height: 60px;
+    }
+    .price {
+        font-size: 70px;
+        line-height: 100px;
+    }
+    .price .timeDetail{
+        font-size: 20px;
+    }
+    .price .tlLogo{
+        font-size: 35px;
+    }
+    .plans p {
+        font-size: 26px;
+        line-height: 36px;
+    }
+    .imgArea{
+        width: 550px;
+    }
+    .shortContent{
+        width: 640px;
+    }
+    .shortContent h2, .bigBlog h3{
+        font-size: 50px;
+        line-height: 55px;
+    }
+}
+
+
+@media screen and (max-width: 1430px) {
+    .aboutContent{
+        width: 45%;
+    }
+    .aboutContent h3 {
+        font-size: 45px;
+        line-height: 55px;
+        padding-bottom: 22px;
+    }
+    .aboutContent p{
+        font-size: 22px;
+        line-height: 36px;
+        padding-bottom: 45px;
+    }
+    .aboutContent a{
+        font-size: 24px;
+        padding: 20px 24px;
+    }
+    .circle, .innerCircle{
+        width: 400px;
+        height: 400px;
+    }
+
+    .circleItem{
+        transform-origin: 200px 200px;
+        width: 100px;
+        height: 100px;
+    }
+    .circleItem img{
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 1380px) {
+    .imgArea{
+        width: 500px;
+    }
+    .shortContent{
+        width: 600px;
+    }
+    .imgArea{
+        width: 420px;
+    }
+    .shortContent{
+        width: 560px;
+    }
+    .shortContent h2, .bigBlog h3{
+        font-size: 40px;
+        line-height: 45px;
+    }
+    .shortContent p{
+        font-size: 20px;
+        line-height: 32px;
+    }
+    .bigBlog{
+        font-size: 18px;
+        line-height: 32px;
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    .formContent h4 {
+        line-height: 74px;
+        font-size: 54px;
+        padding-bottom: 60px;
+    }
+
+    .formContent p {
+        font-size: 22px;
+        line-height: 40px;
+        padding-bottom: 56px;
+    }
+
+    .fcDetails span{
+        font-size: 22px;
+        line-height: 44px;
+    }
+    .formArea input, .formArea textarea, .formArea input::placeholder, .formArea textarea::placeholder{
+        font-size: 24px;
+    }
+
+    .formArea textarea{
+        height: 290px;
+        min-height: 290px;
+        max-height: 290px;
+    }
+    .allMuhtar h3{
+        font-size: 65px;
+        line-height: 75px;
+    }
+}
+
+@media screen and (max-width: 1325px){
+    .persons{
+        width: 260px;
+    }
+    .personImg{
+        width: 260px;
+        height: 214px;
+    }
+    .personName{
+        font-size: 20px;
+        line-height: 20px;
+        padding: 20px 0;
+    }
+    .pDetails{
+        font-size: 14px;
+        line-height: 17px;
+        padding: 20px 9px;
+    }
+    .detailsBtn{
+        font-size: 15px;
+        line-height: 48px;
+        height: 48px;
+    }
+    .sliderArea h3 {
+        font-size: 40px;
+        line-height: 40px;
+        padding-bottom: 34px;
+    }
+
+}
+
+
+@media screen and (max-width: 1290px) {
+    .homeSlide{
+        height: 700px;
+    }
+    .bigText{
+        margin-top: 160px;
+    }
+    .bigText h1{
+        font-size: 75px;
+        line-height: 85px;
+    }
+    .bigText h1 span{
+        font-size: 46px;
+        line-height: 56px;
+    }
+    .mouseIcon{
+        margin-top: 100px;
+    }
+    .layer2, .layer3{
+        width: 355px;
+    }
+    .layer1 {
+        width: 320px;
+    }
+    .menu ul li a {
+        font-size: 16px;
+        padding: 14px 20px;
+    }
+    .menu ul li {
+        margin-right: 4px;
+    }
+    .menu{
+        top: 30px;
+    }
+    .menuBtn{
+        font-size: 18px;
+    }
+    .menu .logo img{
+        width: 140px;
+    }
+    .menuBtn a{
+        padding: 8px 16px;
+    }
+
+    .mahSelector form {
+        width: 460px;
+        height: 650px;
+        padding: 40px 25px 20px;
+    }
+    .mahSelector form span {
+        font-size: 22px;
+        line-height: 22px;
+    }
+    .mahSelector form select {
+        font-size: 20px;
+        padding: 17px 17px;
+        margin-bottom: 22px;
+    }
+    .mahSelector input {
+        margin-top: 140px;
+        font-size: 22px;
+        line-height: 22px;
+    }
+    .mahSelector{
+        height: 650px;
+    }
+}
+
+
+@media screen and (max-width: 1230px){
+    .aboutContent{
+        width: 50%;
+    }
+    .aboutContent h3 {
+        font-size: 40px;
+        line-height: 50px;
+        padding-bottom: 20px;
+    }
+    .aboutContent p{
+        font-size: 20px;
+        line-height: 32px;
+        padding-bottom: 38px;
+    }
+    .aboutContent a{
+        font-size: 22px;
+        padding: 16px 20px;
+    }
+    .circle, .innerCircle{
+        width: 360px;
+        height: 360px;
+    }
+
+    .circleItem{
+        transform-origin: 180px 180px;
+        width: 100px;
+        height: 100px;
+    }
+    .circleItem img{
+        width: 80px;
+    }
+
+    .notice h3{
+        font-size: 52px;
+        line-height: 70px;
+        padding-bottom: 64px;
+    }
+
+    .plans{
+        width: 215px;
+        padding: 35px;
+    }
+    .plans h4 {
+        font-size: 36px;
+        line-height: 50px;
+    }
+    .botBorder{
+        margin: 16px 0;
+    }
+    .price {
+        font-size: 55px;
+        line-height:85px;
+    }
+    .price .timeDetail{
+        font-size: 18px;
+    }
+    .price .tlLogo{
+        font-size: 32px;
+    }
+    .plans p {
+        font-size: 22px;
+        line-height: 32px;
+    }
+    .priceDetail{
+        font-size: 28px;
+    }
+}
+
+
+@media screen and (max-width: 1200px){
+    .sliderArea{
+        padding: 65px 0;
+    }
+    .persons{
+        width: 230px;
+    }
+    .personImg{
+        width: 230px;
+        height: 190px;
+    }
+    .personName{
+        font-size: 18px;
+        line-height: 18px;
+        padding: 18px 0;
+    }
+    .sliderArea h3 {
+        font-size: 38px;
+        line-height: 38px;
+        padding-bottom: 30px;
+    }
+
+    .formArea form{
+        padding: 30px 30px 15px;
+    }
+
+    .formContent h4 {
+        line-height: 66px;
+        font-size: 48px;
+        padding-bottom: 54px;
+    }
+
+    .formContent p {
+        font-size: 20px;
+        line-height: 36px;
+        padding-bottom: 46px;
+    }
+
+    .fcDetails span{
+        font-size: 18px;
+        line-height: 40px;
+    }
+    .formArea input, .formArea textarea, .formArea input::placeholder, .formArea textarea::placeholder{
+        font-size: 20px;
+    }
+
+    .formArea textarea{
+        height: 260px;
+        min-height: 260px;
+        max-height: 260px;
+    }
+    .formArea input {
+        line-height: 60px;
+        padding: 0px 14px;
+    }
+    .footerMenu a{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 1180px){
+    .allMuhtar h3 {
+        font-size: 55px;
+        line-height: 65px;
+    }
+}
+
+@media screen and (max-width: 1130px) {
+    .imgArea{
+        width: 380px;
+    }
+    .shortContent{
+        width: 520px;
+    }
+    .shortContent h2, .bigBlog h3{
+        font-size: 36px;
+        line-height: 41px;
+    }
+    .shortContent p{
+        font-size: 18px;
+        line-height: 32px;
+    }
+
+    .bigBlog{
+        font-size: 16px;
+        line-height: 30px;
+    }
+    .imgArea img{
+        transform: translate(20px, -20px) ;
+    }
+    .menu ul li a {
+        font-size: 14px;
+        padding: 12px 16px;
+    }
+    .menuBtn {
+        font-size: 18px;
+    }
+    .menu .logo img {
+        width: 128px;
+    }
+    .personEducation img{
+        width: 50px;
+    }
+    .personDetailsSection h3{
+        line-height: 47px;
+        font-size: 30px;
+    }
+    .personDetailsSection ul{
+        font-size: 16px;
+        line-height: 40px;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .bigText {
+        margin-top: 130px;
+    }
+    .bigText h1 {
+        font-size: 60px;
+        line-height: 70px;
+    }
+    .bigText h1 span {
+        font-size: 36px;
+        line-height: 36px;
+    }
+    .mouseIcon span{
+        padding-top: 2px;
+        font-size: 23px;
+        margin-left: 16px;
+    }
+    .mahSelector {
+        height: 540px;
+    }
+    .mahSelector form {
+        width: 390px;
+        height: 540px;
+        padding: 35px 20px 20px;
+    }
+    .mahSelector form span {
+        font-size: 18px;
+        line-height: 18px;
+    }
+    .mahSelector form select {
+        font-size: 18px;
+        padding: 15px 15px;
+        margin-bottom: 19px;
+    }
+    .mahSelector input {
+        margin-top: 80px;
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .persons{
+        width: 200px;
+    }
+    .personImg{
+        width: 200px;
+        height: 168px;
+    }
+    .personName{
+        font-size: 16px;
+        line-height: 16px;
+        padding: 16px 0;
+    }
+    .sliderArea h3 {
+        font-size: 38px;
+        line-height: 38px;
+        padding-bottom: 30px;
+    }
+    .pDetails{
+        font-size: 12px;
+        line-height: 16px;
+        padding: 17px 4px;
+    }
+    .detailsBtn{
+        font-size: 14px;
+        line-height: 44px;
+        height: 44px;
+    }
+
+    .formArea form{
+        padding: 30px 30px 15px;
+    }
+
+    .formContent h4 {
+        line-height: 56px;
+        font-size: 40px;
+        padding-bottom: 44px;
+    }
+
+    .formContent p {
+        font-size: 16px;
+        line-height: 31px;
+        padding-bottom: 34px;
+    }
+
+    .fcDetails span{
+        font-size: 18px;
+        line-height: 40px;
+        margin-left: 50px;
+    }
+    .formArea input, .formArea textarea, .formArea input::placeholder, .formArea textarea::placeholder{
+        font-size: 20px;
+    }
+
+    .formArea textarea{
+        height: 260px;
+        min-height: 260px;
+        max-height: 260px;
+    }
+    .formArea input {
+        line-height: 60px;
+        padding: 0px 14px;
+    }
+    .fcDetails span:before{
+        background-size: contain;
+        width: 30px;
+        height: 35px;
+    }
+    .fcDetails span:before{
+        left: -50px;
+    }
+    .formContent{
+        padding: 0 6%;
+    }
+
+    .aboutContent{
+        width: 50%;
+    }
+    .aboutContent h3 {
+        font-size: 34px;
+        line-height: 46px;
+        padding-bottom: 16px;
+    }
+    .aboutContent p{
+        font-size: 16px;
+        line-height: 27px;
+        padding-bottom: 30px;
+    }
+    .aboutContent a{
+        font-size: 20px;
+        padding: 12px 16px;
+    }
+    .circle, .innerCircle{
+        width: 280px;
+        height: 280px;
+    }
+
+    .circleItem{
+        transform-origin: 140px 140px;
+        width: 100px;
+        height: 100px;
+    }
+    .circleItem img{
+        width: 80px;
+    }
+
+    .notice h3{
+        font-size: 46px;
+        line-height: 60px;
+        padding-bottom: 54px;
+    }
+
+    .plans{
+        width: 180px;
+        padding: 24px;
+    }
+    .plans h4 {
+        font-size: 32px;
+        line-height: 44px;
+    }
+    .botBorder{
+        margin: 14px 0;
+    }
+    .price {
+        font-size: 48px;
+        line-height:65px;
+    }
+    .price .timeDetail{
+        font-size: 16px;
+    }
+    .price .tlLogo{
+        font-size: 30px;
+    }
+    .plans p {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .priceDetail{
+        font-size: 26px;
+    }
+    .priceDetail p::after, .priceDetail p::before{
+        width: 100px;
+    }
+    .priceDetail p::before{
+        left: -120px;
+    }
+    .priceDetail p::after{
+        right: -120px;
+    }
+    .allMuhtar h3 {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    .socials img{
+        width: 30px;
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .imgArea{
+        width: 340px;
+    }
+    .shortContent{
+        width: 450px;
+    }
+    .shortContent h2, .bigBlog h3{
+        font-size: 32px;
+        line-height: 37px;
+    }
+    .shortContent p{
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .bigBlog{
+        font-size: 15px;
+        line-height: 26px;
+    }
+    .imgArea img{
+        transform: translate(18px, -18px) ;
+    }
+
+    .muhtarDetail{
+        padding: 65px 0;
+    }
+    .menu ul li {
+        margin-right: 2px;
+    }
+    .menu ul li a {
+        font-size: 12px;
+        padding: 12px 16px;
+    }
+    .menuBtn {
+        font-size: 14px;
+    }
+    .menuBtn a {
+        padding: 8px 16px;
+    }
+    .menuBtn{
+        /*top: 0;
+        transform: translateY(0);*/
+    }
+    .lastFooter{
+        font-size: 16px;
+    }
+    .lastFooter .content{
+        width: 91%;
+    }
+}
+
+@media screen and (max-width: 966px) {
+    .bigText {
+        margin-top: 100px;
+    }
+    .bigText h1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .bigText h1 span {
+        font-size: 26px;
+        line-height: 26px;
+    }
+    .homeSlide {
+        height: 570px;
+    }
+    .layer1 {
+        width: 230px;
+    }
+    .layer2, .layer3 {
+        width: 280px;
+        left: -210px;
+    }
+    .mouseIcon span {
+        padding-top: 13px;
+        font-size: 16px;
+        margin-left: 16px;
+        line-height: 20px;
+    }
+    .socials img{
+        width: 22px;
+        display: inline-block;
+    }
+    .socials a{
+        margin-left: 8px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .persons{
+        width: 170px;
+    }
+    .personImg{
+        width: 170px;
+        height: 140px;
+    }
+
+    .allMuhtar h3 {
+        font-size: 45px;
+        line-height: 55px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .imgArea{
+        width: 280px;
+    }
+    .shortContent{
+        width: 380px;
+    }
+    .shortContent h2, .bigBlog h3{
+        font-size: 30px;
+        line-height: 35px;
+    }
+    .shortContent p{
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .bigBlog{
+        font-size: 14px;
+        line-height: 26px;
+    }
+    .imgArea img{
+        transform: translate(18px, -18px) ;
+    }
+    .menu ul li {
+        margin-right: 5px;
+    }
+    .menu ul li a {
+        font-size: 10px;
+        padding: 10px 10px;
+    }
+    .menuBtn {
+        font-size: 12px;
+    }
+    .menuBtn a {
+        padding: 6px 10px;
+    }
+
+}
+
+@media screen and (max-width: 880px){
+    .mahSelector {
+        height: 480px;
+    }
+    .mahSelector form {
+        margin-top: -25px;
+        width: 300px;
+        height: 480px;
+        padding: 28px 16px 16px;
+    }
+    .mahSelector form span {
+        font-size: 16px;
+        line-height: 16px;
+        padding-bottom: 18px;
+    }
+    .mahSelector form select {
+        font-size: 16px;
+        padding: 12px 12px;
+        margin-bottom: 17px;
+    }
+    .mahSelector input {
+        margin-top: 80px;
+        font-size: 18px;
+        line-height: 18px;
+    }
+}
+@media screen and (max-width: 860px) {
+    .notice h3{
+        font-size: 40px;
+        line-height: 50px;
+        padding-bottom: 44px;
+    }
+
+    .plans{
+        width: 170px;
+        padding: 20px;
+        margin: 0 6px;
+    }
+    .plans h4 {
+        font-size: 20px;
+        line-height: 40px;
+    }
+    .botBorder{
+        margin: 12px 0;
+    }
+    .price {
+        font-size: 44px;
+        line-height:60px;
+    }
+    .price .timeDetail{
+        font-size: 14px;
+    }
+    .price .tlLogo{
+        font-size: 26px;
+    }
+    .plans p {
+        font-size: 18px;
+        line-height: 28px;
+    }
+    .priceDetail{
+        font-size: 24px;
+    }
+
+}
+
+@media screen and (max-width: 835px) {
+    .aboutContent h3 {
+        font-size: 30px;
+        line-height: 40px;
+        padding-bottom: 15px;
+    }
+    .aboutContent p{
+        font-size: 16px;
+        line-height: 27px;
+        padding-bottom: 30px;
+    }
+    .aboutContent a{
+        font-size: 20px;
+        padding: 12px 16px;
+    }
+    .circle, .innerCircle{
+        width: 250px;
+        height: 250px;
+    }
+
+    .circleItem{
+        transform-origin: 125px 125px;
+        width: 100px;
+        height: 100px;
+    }
+    .circleItem img{
+        width: 70px;
+    }
+
+}
+
+@media screen and (max-width: 810px) {
+    .persons{
+        width: 164px;
+    }
+    .personImg{
+        width: 164px;
+        height: 130px;
+    }
+    .allMuhtar h3 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+}
+
+.mobMenu{
+    display: none;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.mobSlide{
+    display: none;
+}
+
+.mLogo{
+    float: left;
+}
+
+.mLogo img{
+    width: 60%;
+}
+
+
+.mMenuBtn{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #2b52b8;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+@media screen and (max-width: 767px){
+    .mobMenuArea{
+        display: block;
+    }
+    .aboutSection{
+        overflow: hidden;
+    }
+    .menu{
+        display: none;
+    }
+    .mobMenu{
+        display: block;
+    }
+
+    .slideAnim{
+        display: none;
+    }
+    .homeSlide{
+        height: auto;
+        max-height: max-content;
+        overflow-X: hidden;
+    }
+
+    .mobSlide{
+        display: block;
+        width: 100%;
+    }
+
+    .mobSlide img{
+        width: 80%;
+    }
+    .content {
+        width: 90%;
+        position: relative;
+    }
+
+    .bigText{
+        float: none;
+        text-align: center;
+        margin-bottom: 100px;
+    }
+    .mouseIcon{
+        display: inline-block;
+    }
+
+    .bigText h1{
+        font-size: 70px;
+        line-height: 80px;
+    }
+
+    .bigText h1 span{
+        font-size: 50px;
+    }
+
+    .socials{
+        position: relative;
+        margin-top: 40px;
+    }
+
+    .socials a{
+        margin: 0 8px;
+    }
+    .socials img{
+        width: 36px;
+    }
+
+    .mouseIcon{
+        margin-top: 60px;
+    }
+
+    .mouseIcon span{
+        display: none;
+    }
+
+    .mahSelector form{
+        float: none;
+        margin: 0 auto;
+        transform: translateY(-30px);
+        width: 100%;
+    }
+
+    .sliderArea h3{
+        text-align: center;
+        padding-bottom: 100px;
+    }
+    .slick-arrow{
+        top: -80px;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+    }
+    .personImg {
+        width: 210px;
+        height: 180px;
+    }
+    .persons{
+        width: 210px;
+    }
+
+    .circle{
+        float: none;
+        margin: 0 auto;
+    }
+
+    .aboutContent{
+        margin-top: 100px;
+        width: 100%;
+        text-align: center;
+    }
+    .aboutContent h3{
+        font-size: 60px;
+        line-height: 80px;
+    }
+    .aboutContent p{
+        font-size: 40px;
+        line-height: 63px;
+    }
+
+    .circle, .innerCircle {
+        width: 350px;
+        height: 350px;
+    }
+    .circleItem img{
+        width: 100px;
+    }
+    .circleItem {
+        transform-origin: 175px 175px;
+    }
+    .formContent{
+        width: 100%;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    .formArea{
+        width: 100%;
+    }
+
+    .fcDetails span {
+        margin-left: 0;
+        margin-top: 60px;
+        padding: 0;
+        width: 100%;
+        border: none;
+    }
+    .fcDetails span:before {
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .formContent h4{
+        font-size: 60px;
+        line-height: 70px;
+    }
+    .formContent p{
+        font-size: 40px;
+        line-height: 60px;
+    }
+    .footerMenu a{
+        display: block;
+        font-size: 20px;
+        margin: 30px 0;
+    }
+    .footer{
+        padding: 50px 0;
+    }
+
+    .formArea input.formBtn{
+        line-height: 60px;
+    }
+    .contact{
+        padding: 100px 0;
+    }
+
+    .abSLeft.aboutSection{
+        padding: 0 0 50px;
+    }
+
+    .phoneArea{
+        width: 100%;
+    }
+
+    .phoneArea img{
+        transform: translateY(0%);
+        margin: 50px 0 0;
+    }
+
+    .abSLeft .aboutContent{
+        margin-top: 20px;
+    }
+
+    .plans{
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 50px;
+        width: 350px;
+        padding: 40px;
+    }
+
+    .priceDetail{
+        display: none;
+    }
+
+    .plans h4 {
+        font-size: 50px;
+        line-height: 60px;
+    }
+
+    .price {
+        font-size: 74px;
+        line-height: 100px;
+    }
+    .plans p {
+        font-size: 26px;
+        line-height: 40px;
+    }
+
+    .allMuhtar h3 {
+        font-size: 35px;
+        line-height: 45px;
+    }
+
+    .imgArea{
+        display: block;
+        width: 80%;
+        float: none;
+        margin: 0 auto;
+        transform: translateX(-9px);
+    }
+    .shortContent{
+        float: none;
+        width: 100%;
+        text-align: left;
+        padding-top: 80px;
+    }
+    .shortContent h2, .bigBlog h3{
+        font-size: 60px;
+        line-height: 65px;
+    }
+    .shortContent p{
+        font-size: 32px;
+        line-height: 42px;
+    }
+    .bigBlog{
+        font-size: 28px;
+        line-height: 38px;
+    }
+
+
+    .imgArea img{
+        transform: translate(18px, -18px) ;
+    }
+
+    .bigBlog img{
+        display: inline-block;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .bigBlog td{
+        display: inline-block;
+    }
+
+    .copyright, .sorumluluk{
+        float: none;
+        padding: 10px 0;
+    }
+    .lastFooter{
+        text-align: center;
+    }
+    .personEducation img{
+        width: 40px;
+    }
+    .personDetailsSection h3{
+        line-height: 37px;
+        font-size: 28px;
+    }
+    .personDetailsSection ul{
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .personDetailsSection li{
+        padding-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 740px){
+    .aboutContent h3 {
+        font-size: 50px;
+        line-height: 70px;
+    }
+    .aboutContent p {
+        font-size: 36px;
+        line-height: 57px;
+    }
+}
+
+
+
+@media screen and (max-width: 705px){
+    .personImg {
+        width: 290px;
+        height: 240px;
+    }
+    .persons{
+        width: 290px;
+    }
+
+}
+
+@media screen and (max-width: 650px){
+    .bigText h1 {
+        font-size: 56px;
+        line-height: 66px;
+    }
+    .bigText h1 span {
+        font-size: 36px;
+    }
+    .mouseIcon{
+        margin-top: 60px;
+        scale: 0.8;
+    }
+    .persons{
+        width: 100%;
+    }
+    .personImg{
+        width: 100%;
+        height: auto;
+    }
+    .personName{
+        font-size: 30px;
+        padding: 26px 0;
+    }
+    .pDetails{
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .allMuhtar h3 {
+        font-size: 30px;
+        line-height: 40px;
+        padding-bottom: 60px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .notice h3 {
+        font-size: 34px;
+        line-height: 44px;
+    }
+}
+
+@media screen and (max-width: 612px){
+    .aboutContent h3 {
+        font-size: 44px;
+        line-height: 56px;
+    }
+    .aboutContent p {
+        font-size: 28px;
+        line-height: 48px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .formContent h4 {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    .formContent p {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .shortContent h2, .bigBlog h3{
+        font-size: 54px;
+        line-height: 59px;
+    }
+    .shortContent p{
+        font-size: 28px;
+        line-height: 38px;
+    }
+    .bigBlog{
+        font-size: 26px;
+        line-height: 36px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .allMuhtar h3 {
+        font-size: 26px;
+        line-height: 36px;
+        padding-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 540px){
+    .aboutSection .content{
+        width: 90%;
+    }
+    .aboutContent h3 {
+        font-size: 36px;
+        line-height: 48px;
+    }
+    .aboutContent p {
+        font-size: 26px;
+        line-height: 42px;
+    }
+}
+
+@media screen and (max-width: 525px){
+    .sliderArea h3{
+        font-size: 34px;
+    }
+
+    .notice{
+        padding: 80px 0;
+    }
+    .notice h3 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .plans{
+        box-sizing: border-box;
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 515px){
+    .bigText h1 {
+        margin-top: 70px;
+        font-size: 46px;
+        line-height: 56px;
+    }
+    .bigText h1 span {
+        font-size: 34px;
+    }
+    .mouseIcon{
+        margin-top: 40px;
+        scale: 0.7;
+    }
+    .shortContent h2, .bigBlog h3{
+        font-size: 50px;
+        line-height: 55px;
+    }
+    .shortContent p{
+        font-size: 26px;
+        line-height: 36px;
+    }
+
+    .bigBlog{
+        font-size: 22px;
+        line-height: 32px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .formContent h4 {
+        font-size: 40px;
+        line-height: 50px;
+        padding-bottom: 34px;
+    }
+    .formContent p {
+        font-size: 26px;
+        line-height: 36px;
+    }
+    .lastFooter{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .circle, .innerCircle {
+        width: 280px;
+        height: 280px;
+    }
+    .circleItem {
+        transform-origin: 140px 140px;
+    }
+    .circleItem img {
+        width: 76px;
+    }
+    .allMuhtar h3 {
+        font-size: 24px;
+        line-height: 34px;
+    }
+    .shortContent h2, .bigBlog h3{
+        font-size: 46px;
+        line-height: 51px;
+    }
+    .shortContent p{
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    .bigBlog{
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+
+
+@media screen and (max-width: 465px){
+    .sliderArea h3{
+        font-size: 28px;
+    }
+    .personName {
+        font-size: 27px;
+        padding: 24px 0;
+    }
+    .pDetails {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .notice h3 {
+        font-size: 26px;
+        line-height: 36px;
+    }
+    .plans h4 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .price {
+        font-size: 68px;
+        line-height: 88px;
+    }
+    .plans p {
+        font-size: 24px;
+        line-height: 38px;
+    }
+    .allMuhtar h3 {
+        font-size: 22px;
+        line-height: 32px;
+    }
+    .personSocials a{
+        margin: 0 22px;
+        width: 52px;
+    }
+}
+
+@media screen and (max-width: 420px){
+    .bigText{
+        margin-top: 50px;
+    }
+    .bigText h1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .bigText h1 span {
+        font-size: 30px;
+    }
+    .mouseIcon{
+        margin-top: 30px;
+        scale: 0.6;
+    }
+    .allMuhtar h3 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .shortContent h2, .bigBlog h3{
+        font-size: 40px;
+        line-height: 45px;
+    }
+    .shortContent p{
+        font-size: 22px;
+        line-height: 32px;
+    }
+
+    .bigBlog{
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .aboutContent h3 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .aboutContent p {
+        font-size: 20px;
+        line-height: 35px;
+    }
+    .circle, .innerCircle {
+        width: 240px;
+        height: 240px;
+    }
+    .circleItem {
+        transform-origin: 120px 120px;
+    }
+    .circleItem img {
+        width: 66px;
+    }
+
+    .formContent h4 {
+        font-size: 30px;
+        line-height: 40px;
+        padding-bottom: 30px;
+    }
+    .formContent p {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .notice h3 {
+        font-size: 22px;
+        line-height: 32px;
+    }
+    .plans{
+        padding: 26px;
+    }
+    .plans h4 {
+        font-size: 30px;
+        line-height: 44px;
+    }
+    .price {
+        font-size: 60px;
+        line-height: 80px;
+    }
+    .botBorder {
+        margin: 10px 0;
+    }
+}
+
+
+@media screen and (max-width: 385px){
+    .sliderArea h3{
+        font-size: 26px;
+    }
+    .personName {
+        font-size: 25px;
+        padding: 24px 0;
+    }
+    .pDetails {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .allMuhtar h3 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
+@media screen and (max-width: 365px){
+    .bigText{
+        margin-top: 40px;
+    }
+    .bigText h1 {
+        font-size: 36px;
+        line-height: 46px;
+    }
+    .bigText h1 span {
+        font-size: 28px;
+    }
+    .mouseIcon{
+        margin-top: 25px;
+        scale: 0.5;
+    }
+}
+
+@media screen and (max-width: 360px){
+    .sliderArea h3{
+        font-size: 24px;
+    }
+    .personName {
+        font-size: 23px;
+        padding: 22px 0;
+    }
+    .pDetails {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .shortContent h2, .bigBlog h3{
+        font-size: 36px;
+        line-height: 41px;
+    }
+    .shortContent p{
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .bigBlog{
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+}
+
+
+@media screen and (max-width: 335px){
+    .bigText{
+        margin-top: 30px;
+    }
+    .bigText h1 {
+        font-size: 32px;
+        line-height: 42px;
+    }
+    .bigText h1 span {
+        font-size: 26px;
+    }
+    .mouseIcon{
+        margin-top: 20px;
+        scale: 0.5;
+    }
+    .sliderArea h3{
+        font-size: 21px;
+    }
+    .personName {
+        font-size: 20px;
+        padding: 20px 0;
+    }
+    .pDetails {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .allMuhtar h3 {
+        font-size: 16px;
+        line-height: 26px;
+    }
+}

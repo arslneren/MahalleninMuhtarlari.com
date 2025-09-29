@@ -1,0 +1,38 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+
+RewriteRule ^anasayfa/$ index.php [L]
+RewriteRule ^anasayfa$ index.php [L]
+RewriteRule ^uyelik/$ hakkimizda.php [L]
+RewriteRule ^uyelik$ hakkimizda.php [L]
+RewriteRule ^adaylar/$ adaylar.php [L]
+RewriteRule ^adaylar$ adaylar.php [L]
+RewriteRule ^iletisim/$ iletisim.php [L]
+RewriteRule ^iletisim$ iletisim.php [L]
+RewriteRule ^kvkk/$ kvkk.php [L]
+RewriteRule ^kvkk$ kvkk.php [L]
+RewriteRule ^muhtarget/$ muhtarget.php [L]
+RewriteRule ^muhtarget$ muhtarget.php [L]
+RewriteRule ^adres/$ adres/index.php [L]
+RewriteRule ^adres$ adres/index.php [L]
+RewriteRule ^query/muhtarget/$ query/muhtarget.php [L]
+RewriteRule ^query/muhtarget$ query/muhtarget.php [L]
+
+RewriteRule ^muhtarlar/$ muhtarlar.php [L]
+RewriteRule ^muhtarlar$ muhtarlar.php [L]
+
+RewriteRule ^muhtar/([^/]+)/([^/]+)?$ muhtar_detay.php?id=$1&title=$2
+
+RewriteRule ^adaylar/il/([^/]+)/ilce/([^/]+)/mahalle/([^/]+)?$ adaylar.php?il=$1&ilce=$2&mahalle=$3 [L,QSA,NC]
+RewriteRule ^adaylar/il/([^/]+)/ilce/([^/]+)/mahalle/([^/]+)?/$ adaylar.php?il=$1&ilce=$2&mahalle=$3 [L,QSA,NC]
+RewriteRule ^muhtarlar/il/([^/]+)/ilce/([^/]+)/mahalle/([^/]+)?$ muhtarlar.php?il=$1&ilce=$2&mahalle=$3 [L,QSA,NC]
+RewriteRule ^muhtarlar/il/([^/]+)/ilce/([^/]+)/mahalle/([^/]+)?/$ muhtarlar.php?il=$1&ilce=$2&mahalle=$3 [L,QSA,NC]
+
+
+
+
+ErrorDocument 404 https://mahalleninmuhtarlari.com
